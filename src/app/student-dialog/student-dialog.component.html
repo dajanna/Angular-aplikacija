@@ -1,0 +1,26 @@
+<p>student-dialog works!</p>
+<h1 mat-dialog-title>Detalji studenta</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Ime" [(ngModel)]="student.firstName">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Prezime" [(ngModel)]="student.lastName">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Identifikacioni broj" [(ngModel)]="student.identificationNumber">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="adress" [(ngModel)]="student.address">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="email" [(ngModel)]="student.email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="avatar" [(ngModel)]="student.avatar">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Otkaži</button>
+  <button mat-button (click)="confirm()">Sačuvaj</button>
+</div>

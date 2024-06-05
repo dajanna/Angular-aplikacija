@@ -1,0 +1,14 @@
+<fieldset>
+    <a (click)="clickHandler()" class="button-link">Servis</a> 
+    <form [formGroup]="studentForm">
+        <label for="firstName">Ime:</label>
+        <input id="firstName" formControlName="firstName" type="text" /> <br>
+      
+        <label for="lastName">Prezime:</label>
+        <input id="lastName" formControlName="lastName" type="text" /> <br>
+      
+        <label for="indexNumber">Broj indeksa:</label>
+        <input id="indexNumber" formControlName="indexNumber" type="text" /> <br>
+      
+      </form>
+    </fieldset>

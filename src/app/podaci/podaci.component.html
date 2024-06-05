@@ -1,0 +1,59 @@
+<a [routerLink]="['/podaci, podaci.id']"></a>
+
+<div *ngIf="showDetails">
+    <app-student-details [studentId]="studentId" (onClose)="onStudentConfirm($event)"></app-student-details>
+  </div>
+  <div *ngIf="!showDetails">
+    <button color="primary" mat-raised-button (click)="getAll()">Prikazi podatke</button>
+    <button color="warn" mat-raised-button (click)="showStudentDetails(0)">Dodaj studenta</button>
+  
+    <mat-form-field>
+      <input (keyup)="primeniFilter($event)" matInput placeholder="Filter">
+    </mat-form-field>
+  
+    <mat-table [dataSource]="dataSource">
+  
+      <ng-container matColumnDef="avatar">
+        <mat-header-cell appHighlight *matHeaderCellDef> Avatar </mat-header-cell>
+        <mat-cell appHighlight *matCellDef="let element">
+          <img [src]="element.avatar" width="50" height="50">
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="id">
+        <mat-header-cell appHighlight *matHeaderCellDef> Student ID </mat-header-cell>
+        <mat-cell appHighlight *matCellDef="let element"> {{ element.id }} </mat-cell>
+      </ng-container>
+  
+      <ng-container appHighlight matColumnDef="firstName">
+        <mat-header-cell appHighlight *matHeaderCellDef> Ime </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.firstName }} </mat-cell>
+      </ng-container>
+  
+      <ng-container appHighlight matColumnDef="lastName">
+        <mat-header-cell appHighlight *matHeaderCellDef> Prezime </mat-header-cell>
+        <mat-cell appHighlight *matCellDef="let element"> {{ element.lastName }} </mat-cell>
+      </ng-container>
+  
+      <ng-container appHighlight matColumnDef="adress">
+        <mat-header-cell appHighlight *matHeaderCellDef> Adresa </mat-header-cell>
+        <mat-cell appHighlight *matCellDef="let element"> {{ element.adress }} </mat-cell>
+      </ng-container>
+  
+      <ng-container appHighlight matColumnDef="email">
+        <mat-header-cell appHighlight *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell appHighlight *matCellDef="let element"> {{ element.email }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="akcije">
+        <mat-header-cell appHighlight *matHeaderCellDef>Akcije</mat-header-cell>
+        <mat-cell  *matCellDef="let element">
+          <button appHighlight mat-button (click)="showStudentDetails(element.id)">Detalji</button>
+          <button appHighlight mat-button color="warn" (click)="deleteStudent(element.id)">Obriši</button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>

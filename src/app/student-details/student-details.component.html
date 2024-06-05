@@ -1,0 +1,50 @@
+<p>Detalji studenta</p>
+
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>StudentID:</mat-label>
+        <input matInput required type="number" [(ngModel)]="student.id">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Ime:</mat-label>
+        <input matInput required type="text" [(ngModel)]="student.firstName">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Prezime:</mat-label>
+        <input matInput required type="text" [(ngModel)]="student.lastName">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Avatar:</mat-label>
+        <input matInput required type="text" [(ngModel)]="student.avatar">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Aktivan:</mat-label>
+        <input matInput required type="boolean" [(ngModel)]="student.active">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Identifikacioni broj:</mat-label>
+        <input matInput required type="number" [(ngModel)]="student.identificationNumber">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Adresa:</mat-label>
+        <input matInput required type="text" [(ngModel)]="student.address">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Grad:</mat-label>
+        <input matInput required type="text" [(ngModel)]="student.city">
+        </mat-form-field> <br>
+
+        <mat-form-field floatLabel="auto" appearance="fill">
+        <mat-label>Email:</mat-label>
+        <input matInput required type="text" [(ngModel)]="student.email">
+        </mat-form-field> <br>
+
+        <button color="primary" mat-raised-button (click)="confirm()">Sacuvaj</button>
+        <button color="warn" mat-raised-button (click)="close()">Zatvori</button>
